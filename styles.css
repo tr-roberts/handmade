@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+  }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color:#fff59e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size:medium; /* Adjust the font size as needed */
+    transition: box-shadow 0.3s ease-in-out; /* Add a smooth transition effect */
+
+    /* Initial shadow settings */
+    text-shadow: 0 0 0 transparent;
+}
+
+h2 {
+    display: inline-block;
+    font-size:medium; /* Adjust the font size as needed */
+    margin: 0 10px; /* Add space between the <h2> elements */
+}
+
+h1:hover {
+    /* Hover shadow settings */
+    text-shadow: 3px 3px 5px #c0b490; /* Adjust the color and values as needed */
+}
+
+p {
+    font-size: 1.2em; /* Adjust the font size as needed */
+}
