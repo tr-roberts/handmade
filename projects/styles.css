@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f2f2f2; /* Background color for the page */
+}
+
+.bar-counter {
+    position: relative;
+}
+
+.glass {
+    width: 100px;
+    height: 200px;
+    background-color: #b0e0e6; /* Light blue color for the glass */
+    border-radius: 10px;
+    position: relative;
+}
+
+.drink {
+    width: 80px;
+    height: 120px;
+    background-color: #ff6347; /* Red-Orange color for the drink */
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    overflow: hidden; /* Hide overflow to ensure ice cubes and orange slice stay within the drink */
+}
+
+.ice-cube {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff; /* White color for the ice cubes */
+    border: 1px solid #b0e0e6; /* Border to resemble the glass color */
+    position: absolute;
+    transform: translate(calc(random() * 100%), calc(random() * 100%)); /* Randomize the position of ice cubes */
+}
+
+.orange-slice {
+    width: 40px;
+    height: 40px;
+    background-color: #ffa500; /* Orange color for the orange slice */
+    border-radius: 50%;
+    position: absolute;
+    bottom: -20px; /* Adjust the position to emerge from the drink */
+    left: 50%; /* Center the orange slice within the drink */
+    transform: translateX(-50%);
+}
