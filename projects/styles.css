@@ -1,57 +1,75 @@
 /* stylesheet for handmade web -> handmade -> projects -> structure.html */
 body {
     margin: 0;
-    padding: 0;
     font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(#a10b2b, #fff59e, #b5d1cc);
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f2f2f2; /* Background color for the page */
+.foreground-elements {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: 20%;
 }
 
-.bar-counter {
+.glass,
+.drink {
     position: relative;
 }
 
 .glass {
-    width: 100px;
-    height: 200px;
-    background-color: #b0e0e6; /* Light blue color for the glass */
+    /* Additional styles for glass */
+    width: 210px;
+    height: 400px;
+    background-color: #f5f5b8;
+    margin: 5% auto;
     border-radius: 10px;
     position: relative;
+    border: 2px solid #000;
 }
 
 .drink {
-    width: 80px;
-    height: 120px;
-    background-color: #ff6347; /* Red-Orange color for the drink */
-    border-radius: 5px;
+    /* Additional styles for drink */
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    overflow: hidden; /* Hide overflow to ensure ice cubes and orange slice stay within the drink */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b22222;
+    width: 180px;
+    height: 300px;
+    border-radius: 10px;
+    border: 2px solid #000;
 }
 
 .ice-cube {
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff; /* White color for the ice cubes */
-    border: 1px solid #b0e0e6; /* Border to resemble the glass color */
-    position: absolute;
-    transform: translate(calc(random() * 100%), calc(random() * 100%)); /* Randomize the position of ice cubes */
+    width: 30px;
+    height: 30px;
+    background-color: #c0c0c0;
+    margin: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 2px solid #000;
 }
 
 .orange-slice {
-    width: 40px;
-    height: 40px;
-    background-color: #ffa500; /* Orange color for the orange slice */
-    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #ffa500;
     position: absolute;
-    bottom: -20px; /* Adjust the position to emerge from the drink */
-    left: 50%; /* Center the orange slice within the drink */
+    bottom: 0;
+    left: 50%;
     transform: translateX(-50%);
+    border-radius: 50% 50% 0 0;
+    border: 2px solid #000;
+}
+
+.bar-counter {
+    width: 100%;
+    height: 150px; /* Adjusted height for the bar-counter */
+    background-color: #328e13;
+    border-top: 2px solid #000;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
 }
