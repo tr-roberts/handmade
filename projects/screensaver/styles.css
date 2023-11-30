@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('raveblur.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  .fluted-glass-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .fluted-glass {
+    flex: 1;
+    height: 100%;
+    background: rgba(244, 188, 210, 0.581);
+    filter: blur(12px);
+    margin: 0 4px;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes decreaseHeightOdd {
+    0%,
+    100% {
+      height: 100%;
+    }
+    50% {
+      height: 50%;
+    }
+  }
+  
+  @keyframes decreaseHeightEven {
+    0%,
+    100% {
+      height: 100%;
+    }
+    50% {
+      height: -150%;
+    }
+  }
+  
+  .fluted-glass:nth-child(odd) {
+    animation-name: decreaseHeightOdd;
+  }
+  
+  .fluted-glass:nth-child(even) {
+    animation-name: decreaseHeightEven;
+  }
+  
