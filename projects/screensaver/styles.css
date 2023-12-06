@@ -1,62 +1,90 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('raveblur.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.fluted-glass-container {
+  display: flex;
+  height: 100vh;
+}
+
+.fluted-glass {
+  flex: 1;
+  height: 100%;
+  background: rgba(244, 188, 210, 0.581);
+  filter: blur(12px);
+  margin: 0 4px;
+}
+
+.floating-circle, .inner-floating-circle {
+  position: absolute;
+  width: 2in;
+  height: 2in;
+  border-radius: 50%;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+}
+
+.floating-circle {
+  background-color: #ff5ec4;
+  filter: blur(22px);
+  animation-name: floatAnimation;
+}
+
+.inner-floating-circle {
+  background-color: #c0b490;
+  filter: blur(15px);
+  animation-name: innerFloatAnimation;
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    top: 0; /* Adjusted to stay within 1 inch of the top edge */
+    left: 0; /* Adjusted to stay within 1 inch of the left edge */
   }
-  
-  .background {
-    position: fixed;
+  25% {
     top: 0;
+    left: calc(100% - 2in); /* Adjusted to stay within 1 inch of the right edge */
+  }
+  50% {
+    top: calc(100% - 2in); /* Adjusted to stay within 1 inch of the bottom edge */
+    left: calc(100% - 2in);
+  }
+  75% {
+    top: calc(100% - 2in);
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('raveblur.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
   }
-  
-  .fluted-glass-container {
-    display: flex;
-    height: 100vh;
+}
+
+@keyframes innerFloatAnimation {
+  0%, 100% {
+    top: 3in; /* Adjusted to stay within 1 inch of the top edge */
+    left: 3in; /* Adjusted to stay within 1 inch of the left edge */
   }
-  
-  .fluted-glass {
-    flex: 1;
-    height: 100%;
-    background: rgba(244, 188, 210, 0.581);
-    filter: blur(12px);
-    margin: 0 4px;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
+  25% {
+    top: 3in;
+    left: calc(100% - 4in); /* Adjusted to stay within 1 inch of the right edge */
   }
-  
-  @keyframes decreaseHeightOdd {
-    0%,
-    100% {
-      height: 100%;
-    }
-    50% {
-      height: 50%;
-    }
+  50% {
+    top: calc(100% - 4.5in); /* Adjusted to stay within 1 inch of the bottom edge */
+    left: calc(100% - 4in);
   }
-  
-  @keyframes decreaseHeightEven {
-    0%,
-    100% {
-      height: 100%;
-    }
-    50% {
-      height: -150%;
-    }
+  75% {
+    top: calc(100% - 4.5in);
+    left: 3in;
   }
-  
-  .fluted-glass:nth-child(odd) {
-    animation-name: decreaseHeightOdd;
-  }
-  
-  .fluted-glass:nth-child(even) {
-    animation-name: decreaseHeightEven;
-  }
-  
+}
