@@ -61,7 +61,30 @@
       </div>
       <div class="floating-circle"></div>
       <div class="inner-floating-circle"></div>
+      <div class="button">
+        <a href="screensavertwo.html">.</a>
+      </div>
+    <div class="digit" id="digit1"></div>
+    <div class="digit" id="digit2"></div>
   </div>
+
+  <script>
+    function createDigit(parentId, segments) {
+      const digitElement = document.getElementById(parentId);
+
+      segments.forEach((segment, index) => {
+        const segmentElement = document.createElement("div");
+        segmentElement.className = "segment";
+        segmentElement.style.backgroundColor = segment ? "#00ff00" : "#000";
+        digitElement.appendChild(segmentElement);
+      });
+    }
+
+    // Example: Display the number 7
+    createDigit("digit1", [1, 0, 0, 1, 1, 1, 0]);
+    createDigit("digit2", [0, 1, 0, 0, 1, 0, 0]);
+    // Add more digits with different patterns
+  </script>
 
 </body>
 </html>

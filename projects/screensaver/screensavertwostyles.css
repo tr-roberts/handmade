@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#96bfe6;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.triangle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    filter:blur(72px);
+}
+
+#triangle1 {
+    border-width: 100vh 0 0 100vw;
+    border-color:#f5f5b8; /* Semi-transparent yellow */
+    animation: triangleAnimation 10s infinite;
+}
+
+#triangle2 {
+    border-width: 0 100vw 100vh 0;
+    border-color:#328e13; /* Semi-transparent purple */
+    animation: triangleAnimation 20s infinite;
+}
+
+@keyframes triangleAnimation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+.floating-circle {
+    position: absolute;
+    width: 2in;
+    height: 2in;
+    border-radius: 50%;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+    background-color: #a3ad00;
+    filter: blur(42px);
+    animation-name: floatAnimation;
+  }
+
+  .floating-circle:hover {
+    background-color: #fa9442;
+  }
+
+  @keyframes floatAnimation {
+    0%, 100% {
+      top: 0; /* Adjusted to stay within 1 inch of the top edge */
+      left: 0; /* Adjusted to stay within 1 inch of the left edge */
+    }
+    25% {
+      top: 0;
+      left: calc(100% - 2in); /* Adjusted to stay within 1 inch of the right edge */
+    }
+    50% {
+      top: calc(100% - 2in); /* Adjusted to stay within 1 inch of the bottom edge */
+      left: calc(100% - 2in);
+    }
+    75% {
+      top: calc(100% - 2in);
+      left: 0;
+    }
+  }
+
+  .button {
+    position: fixed;
+    top: 95%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:#e62e73; /* Choose your button color */
+    filter:blur(12px);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .button a:hover {
+    background-color: #003e83;  
+  }

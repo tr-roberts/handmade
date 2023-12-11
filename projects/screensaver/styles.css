@@ -40,13 +40,13 @@ body {
 }
 
 .floating-circle {
-  background-color: #ff5ec4;
+  background-color: #e6adcf;
   filter: blur(22px);
   animation-name: floatAnimation;
 }
 
 .inner-floating-circle {
-  background-color: #c0b490;
+  background-color: #681916;
   filter: blur(15px);
   animation-name: innerFloatAnimation;
 }
@@ -88,3 +88,42 @@ body {
     left: 3in;
   }
 }
+
+.button {
+  position: fixed;
+  top: 95%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #66ab56; /* Choose your button color */
+  filter:blur(12px);
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.button a:hover {
+  background-color: #730f1f;  
+}
+
+.digit {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px; /* Adjust the spacing between digits */
+  z-index: 100;
+}
+
+.segment {
+  width: 20px;
+  height: 60px;
+  background-color: #00ff00; /* Change to green for visibility */
+  margin: 5px;
+}
+
